@@ -8,6 +8,14 @@
 
 import Foundation
 
-struct User{
+struct User: Codable{
     let email: String
+}
+
+struct LoginResponse: Decodable{
+    let user: UserResponse
+}
+struct UserResponse: Decodable{
+    let email: String
+    let token: String
 }
