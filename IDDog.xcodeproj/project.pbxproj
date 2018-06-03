@@ -13,6 +13,7 @@
 		76CF8DD420C459A300A5CEA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CF8DD320C459A300A5CEA5 /* Assets.xcassets */; };
 		76CF8DD720C459A300A5CEA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CF8DD520C459A300A5CEA5 /* LaunchScreen.storyboard */; };
 		76CF8DE220C459A300A5CEA5 /* IDDogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DE120C459A300A5CEA5 /* IDDogTests.swift */; };
+		76CF8DF020C45ACD00A5CEA5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DEF20C45ACD00A5CEA5 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		76CF8DDD20C459A300A5CEA5 /* IDDogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDDogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76CF8DE120C459A300A5CEA5 /* IDDogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDDogTests.swift; sourceTree = "<group>"; };
 		76CF8DE320C459A300A5CEA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76CF8DEF20C45ACD00A5CEA5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,9 @@
 		76CF8DCB20C459A100A5CEA5 /* IDDog */ = {
 			isa = PBXGroup;
 			children = (
+				76CF8DEE20C45A6E00A5CEA5 /* Models */,
+				76CF8DED20C45A5000A5CEA5 /* Views */,
+				76CF8DEC20C45A4300A5CEA5 /* Controllers */,
 				76CF8DCC20C459A100A5CEA5 /* AppDelegate.swift */,
 				76CF8DCE20C459A100A5CEA5 /* ViewController.swift */,
 				76CF8DD020C459A100A5CEA5 /* Main.storyboard */,
@@ -94,6 +99,28 @@
 				76CF8DE320C459A300A5CEA5 /* Info.plist */,
 			);
 			path = IDDogTests;
+			sourceTree = "<group>";
+		};
+		76CF8DEC20C45A4300A5CEA5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		76CF8DED20C45A5000A5CEA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		76CF8DEE20C45A6E00A5CEA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				76CF8DEF20C45ACD00A5CEA5 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +226,7 @@
 			files = (
 				76CF8DCF20C459A100A5CEA5 /* ViewController.swift in Sources */,
 				76CF8DCD20C459A100A5CEA5 /* AppDelegate.swift in Sources */,
+				76CF8DF020C45ACD00A5CEA5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IDDog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,6 +406,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IDDog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
