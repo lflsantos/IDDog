@@ -70,15 +70,16 @@
                         <outlet property="emailTextField" destination="hAG-vd-smu" id="3bz-7w-rdm"/>
                         <outlet property="signInActivityIndicator" destination="F7r-Od-BRS" id="qHo-bH-8Ch"/>
                         <outlet property="signInButton" destination="CxN-EI-PiX" id="diG-fe-dD6"/>
+                        <segue destination="BEN-vf-dZn" kind="presentation" identifier="loggedSegue" id="lY3-9y-9To"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Gallery View Controller-->
         <scene sceneID="9Me-KN-qaV">
             <objects>
-                <viewController id="BEN-vf-dZn" sceneMemberID="viewController">
+                <viewController id="BEN-vf-dZn" customClass="GalleryViewController" customModule="IDDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hjl-F8-uEP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,6 +92,9 @@
                                     <segment title="Hound"/>
                                     <segment title="Pug"/>
                                 </segments>
+                                <connections>
+                                    <action selector="switchedCategory:" destination="BEN-vf-dZn" eventType="valueChanged" id="ib3-Jl-8Yg"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wy7-Oe-ZTn">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
@@ -102,7 +106,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Usz-nW-YhB">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageView" id="Usz-nW-YhB">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -123,9 +127,15 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wEL-7K-AHB">
+                                <rect key="frame" x="169" y="369" width="37" height="37"/>
+                                <color key="color" red="0.4941176471" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wEL-7K-AHB" firstAttribute="centerX" secondItem="wy7-Oe-ZTn" secondAttribute="centerX" id="7FG-lQ-bqb"/>
+                            <constraint firstItem="wEL-7K-AHB" firstAttribute="centerY" secondItem="wy7-Oe-ZTn" secondAttribute="centerY" id="FsG-8D-JQ8"/>
                             <constraint firstItem="wy7-Oe-ZTn" firstAttribute="leading" secondItem="K8Q-cx-fpz" secondAttribute="leading" id="HyT-b1-wNp"/>
                             <constraint firstItem="bmk-ie-8ar" firstAttribute="top" secondItem="K8Q-cx-fpz" secondAttribute="top" constant="35" id="Qgg-Ix-HHN"/>
                             <constraint firstItem="K8Q-cx-fpz" firstAttribute="trailing" secondItem="wy7-Oe-ZTn" secondAttribute="trailing" id="Ugw-MS-IDs"/>
@@ -135,10 +145,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K8Q-cx-fpz"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="wEL-7K-AHB" id="wsz-Qb-9Uf"/>
+                        <outlet property="collectionView" destination="wy7-Oe-ZTn" id="BIj-KD-PHM"/>
+                        <outlet property="segmentedControl" destination="bmk-ie-8ar" id="GDo-2Y-AV8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ls-zM-OQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937" y="31"/>
+            <point key="canvasLocation" x="1495" y="37"/>
         </scene>
     </scenes>
 </document>

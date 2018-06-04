@@ -12,14 +12,14 @@ protocol LoginView: NSObjectProtocol{
     func startLoading()
     func finishLoading()
     func loginSuccessful()
-    func errorOnLogin(message: String?)
+    func errorOnLogin(message: String)
 }
 
 class LoginPresenter {
     private weak var loginView: LoginView!
-    private let service: APIService
+    private let service: LoginService
     
-    init(service: APIService){
+    init(service: LoginService){
         self.service = service
     }
     
@@ -30,11 +30,13 @@ class LoginPresenter {
     func login(email: String){
         self.loginView.startLoading()
         self.service.login(email: email){ (isLogged) -> Void in
-            self.loginView.finishLoading()
-            if(isLogged){
-                self.loginView.loginSuccessful()
-            } else {
-                self.loginView.errorOnLogin(message: "Erro ao efetuar Login")
+            DispatchQueue.main.async {
+                self.loginView.finishLoading()
+                if(isLogged){
+                    self.loginView.loginSuccessful()
+                } else {
+                    self.loginView.errorOnLogin(message: "Erro ao efetuar Login")
+                }
             }
         }
     }

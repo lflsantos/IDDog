@@ -9,10 +9,7 @@
 import Foundation
 
 
-class APIService {
-    //TODO: - change token to UserDefaults.standard
-    var token: String?
-    
+class LoginService {
     
     //MARK: - Login
     func login(email: String, _ callback: @escaping (Bool) -> Void){
@@ -23,7 +20,7 @@ class APIService {
         
         var loginRequest = URLRequest(url: url)
         loginRequest.httpMethod = "POST"
-        loginRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        loginRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let user = User(email: email)
         let encodedUser = try? JSONEncoder().encode(user)
         loginRequest.httpBody = encodedUser
@@ -39,7 +36,7 @@ class APIService {
                 callback(false)
                 return
             }
-            self.token = responseToken
+            UserDefaults.standard.set(responseToken, forKey: "token")
             callback(true)
         }
         task.resume()

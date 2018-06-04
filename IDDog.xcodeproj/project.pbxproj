@@ -13,9 +13,13 @@
 		76CF8DD420C459A300A5CEA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CF8DD320C459A300A5CEA5 /* Assets.xcassets */; };
 		76CF8DD720C459A300A5CEA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CF8DD520C459A300A5CEA5 /* LaunchScreen.storyboard */; };
 		76CF8DE220C459A300A5CEA5 /* IDDogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DE120C459A300A5CEA5 /* IDDogTests.swift */; };
-		76CF8DF020C45ACD00A5CEA5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DEF20C45ACD00A5CEA5 /* User.swift */; };
+		76CF8DF020C45ACD00A5CEA5 /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DEF20C45ACD00A5CEA5 /* UserModels.swift */; };
 		76CF8DF220C464EF00A5CEA5 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DF120C464EF00A5CEA5 /* LoginPresenter.swift */; };
-		76CF8DF420C4663800A5CEA5 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DF320C4663800A5CEA5 /* APIService.swift */; };
+		76CF8DF420C4663800A5CEA5 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DF320C4663800A5CEA5 /* LoginService.swift */; };
+		76CF8DF620C4A5A300A5CEA5 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DF520C4A5A300A5CEA5 /* GalleryViewController.swift */; };
+		76CF8DF820C4ABBB00A5CEA5 /* GalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DF720C4ABBB00A5CEA5 /* GalleryPresenter.swift */; };
+		76CF8DFA20C4AF3400A5CEA5 /* GalleryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DF920C4AF3400A5CEA5 /* GalleryService.swift */; };
+		76CF8DFC20C4B70500A5CEA5 /* GalleryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8DFB20C4B70500A5CEA5 /* GalleryModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +43,13 @@
 		76CF8DDD20C459A300A5CEA5 /* IDDogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDDogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76CF8DE120C459A300A5CEA5 /* IDDogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDDogTests.swift; sourceTree = "<group>"; };
 		76CF8DE320C459A300A5CEA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76CF8DEF20C45ACD00A5CEA5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		76CF8DEF20C45ACD00A5CEA5 /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
 		76CF8DF120C464EF00A5CEA5 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		76CF8DF320C4663800A5CEA5 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		76CF8DF320C4663800A5CEA5 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		76CF8DF520C4A5A300A5CEA5 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		76CF8DF720C4ABBB00A5CEA5 /* GalleryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPresenter.swift; sourceTree = "<group>"; };
+		76CF8DF920C4AF3400A5CEA5 /* GalleryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryService.swift; sourceTree = "<group>"; };
+		76CF8DFB20C4B70500A5CEA5 /* GalleryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				76CF8DF120C464EF00A5CEA5 /* LoginPresenter.swift */,
+				76CF8DF720C4ABBB00A5CEA5 /* GalleryPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -116,6 +125,7 @@
 			children = (
 				76CF8DD020C459A100A5CEA5 /* Main.storyboard */,
 				76CF8DCE20C459A100A5CEA5 /* LoginViewController.swift */,
+				76CF8DF520C4A5A300A5CEA5 /* GalleryViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,8 +133,10 @@
 		76CF8DEE20C45A6E00A5CEA5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				76CF8DEF20C45ACD00A5CEA5 /* User.swift */,
-				76CF8DF320C4663800A5CEA5 /* APIService.swift */,
+				76CF8DEF20C45ACD00A5CEA5 /* UserModels.swift */,
+				76CF8DF320C4663800A5CEA5 /* LoginService.swift */,
+				76CF8DFB20C4B70500A5CEA5 /* GalleryModels.swift */,
+				76CF8DF920C4AF3400A5CEA5 /* GalleryService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,11 +242,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76CF8DFA20C4AF3400A5CEA5 /* GalleryService.swift in Sources */,
+				76CF8DF820C4ABBB00A5CEA5 /* GalleryPresenter.swift in Sources */,
 				76CF8DF220C464EF00A5CEA5 /* LoginPresenter.swift in Sources */,
 				76CF8DCF20C459A100A5CEA5 /* LoginViewController.swift in Sources */,
-				76CF8DF420C4663800A5CEA5 /* APIService.swift in Sources */,
+				76CF8DF420C4663800A5CEA5 /* LoginService.swift in Sources */,
+				76CF8DF620C4A5A300A5CEA5 /* GalleryViewController.swift in Sources */,
 				76CF8DCD20C459A100A5CEA5 /* AppDelegate.swift in Sources */,
-				76CF8DF020C45ACD00A5CEA5 /* User.swift in Sources */,
+				76CF8DFC20C4B70500A5CEA5 /* GalleryModels.swift in Sources */,
+				76CF8DF020C45ACD00A5CEA5 /* UserModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

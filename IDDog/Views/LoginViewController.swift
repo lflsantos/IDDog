@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signInActivityIndicator: UIActivityIndicatorView!
     
-    private let presenter = LoginPresenter(service: APIService())
+    private let presenter = LoginPresenter(service: LoginService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +56,11 @@ extension LoginViewController: LoginView{
     
     func loginSuccessful() {
         print("success")
-//        self.present(UIViewController, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        self.performSegue(withIdentifier: "loggedSegue", sender: nil)
     }
     
-    func errorOnLogin(message: String?) {
-        
+    func errorOnLogin(message: String) {
+        self.showError(message: message)
     }
     
     
